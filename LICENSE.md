@@ -1,0 +1,1 @@
+YT-Downloader © 2023 by Jesse Gaspar is licensed under CC BY-NC 4.0 
