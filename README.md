@@ -5,7 +5,7 @@
 ## Table of Contents
 1. [Metadata and License](#metadata-and-license)
 2. [Error Handling](#error-handling)
-3. [Initial Setup](#initial-setup)
+3. [Usage](#usage)
 4. [Functions](#functions)
 5. [Main Execution](#main-execution)
 6. [Video Download](#video-download)
@@ -21,14 +21,17 @@ The script comes with a detailed copyright and licensing section, explicitly all
 
 ## Error Handling
 
-The script utilizes Bash's `set -e` to exit if any command fails.
+The script utilizes Bash's `set -e` to exit if any command fails. Because of this maybe you'll need to run the script more than once.
 
-## Initial Setup
+## Usage
 
-Variables are defined for file paths, file names, and settings.
-The only thing you have to do is:
+First you need to access the path where you cloned the script. Eg:
 
-`sh start.sh`
+`cd /path/to/yt-downloader`
+
+Now you can do this:
+
+`bash start.sh`
 
 ## Functions
 
