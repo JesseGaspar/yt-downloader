@@ -112,14 +112,17 @@ install_package() {
 conditional_install() {
   local os=$(uname)
   local installer
+  local libass_package
 
   # Determine the OS and set the corresponding installer function
   if [ "$os" == "Darwin" ]; then
     echo "MacOS system detected."
     installer=macos_install
+    libass_package="libass"  # Definir o pacote apropriado para MacOS
   elif [ "$os" == "Linux" ]; then
     echo "Linux system detected."
     installer=linux_install
+    libass_package="libass-dev"  # Definir o pacote apropriado para Linux
   else
     echo "Unsupported operating system."
     exit 1
@@ -129,9 +132,12 @@ conditional_install() {
   echo "Please wait..."
 
   # Install packages
-  for package in yt-dlp yasm pkg-config libass-dev ffmpeg x264; do
+  for package in yt-dlp yasm pkg-config ffmpeg x264; do
     install_package "$package" "$installer"
   done
+
+  # Instalar o pacote libass apropriado para o sistema operacional
+  install_package "$libass_package" "$installer"
 
   # Refresh the shell session after all installations
   refresh_shell_session
